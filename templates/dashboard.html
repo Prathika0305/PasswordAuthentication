@@ -1,20 +1,36 @@
 {% extends "base.html" %}
+
 {% block content %}
 
 <div class="center">
-    <div class="card">
 
-        <h1>Welcome {{ user }} 🎉</h1>
+<div class="card">
 
-        <p style="color: green;">
-            You are successfully logged in
-        </p>
+<h1>🎉 Welcome {{ user }}</h1>
 
-        <a href="/logout">
-            <button style="background:red;">Logout</button>
-        </a>
+<p class="success">
+Successfully Authenticated
+</p>
 
-    </div>
+<hr>
+
+<h5>Security Features Enabled</h5>
+
+<p>✅ bcrypt Hashing</p>
+<p>✅ Session Authentication</p>
+<p>✅ Protected Dashboard</p>
+<p>✅ Secure Login</p>
+
+<a href="/logout">
+
+<button style="background:red;">
+Logout
+</button>
+
+</a>
+
+</div>
+
 </div>
 
 {% endblock %}

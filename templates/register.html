@@ -1,18 +1,70 @@
 {% extends "base.html" %}
+
 {% block content %}
 
 <div class="center">
-    <div class="card">
-        <h2>Register</h2>
 
-        <form method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Register</button>
-        </form>
+<div class="card">
 
-        <p><a href="/login">Already have account?</a></p>
-    </div>
+<h2>Create Account</h2>
+
+<form method="POST">
+
+<input
+type="text"
+name="username"
+placeholder="Username"
+required>
+
+<input
+type="password"
+id="password"
+name="password"
+placeholder="Password"
+required>
+
+<small id="strength"></small>
+
+<button type="submit">
+Register
+</button>
+
+</form>
+
+<p>
+<a href="/login">
+Already have account?
+</a>
+</p>
+
 </div>
+
+</div>
+
+<script>
+
+let pwd=document.getElementById("password");
+let strength=document.getElementById("strength");
+
+pwd.addEventListener("keyup",function(){
+
+let value=pwd.value;
+
+if(value.length<8){
+strength.innerHTML="Weak Password";
+strength.style.color="red";
+}
+else if(value.length<12){
+strength.innerHTML="Medium Password";
+strength.style.color="orange";
+}
+else{
+strength.innerHTML="Strong Password";
+strength.style.color="green";
+}
+
+});
+
+</script>
 
 {% endblock %}

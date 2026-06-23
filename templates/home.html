@@ -1,15 +1,29 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
-
 {% block content %}
 
-<div class="text-center mt-5">
-    <h1>Secure Authentication System</h1>
-    <p>Cryptography & Network Security Project</p>
+<div class="center">
 
-    <a href="/login" class="btn btn-success m-2">Login</a>
-    <a href="/register" class="btn btn-primary m-2">Register</a>
+<div class="card">
+
+<h1>🔐 Secure Password Authentication</h1>
+
+<p>Advanced Password Protection using bcrypt hashing</p>
+
+<a href="/register">
+<button class="nav-btn">
+Register
+</button>
+</a>
+
+<a href="/login">
+<button class="nav-btn">
+Login
+</button>
+</a>
+
+</div>
+
 </div>
 
 {% endblock %}
